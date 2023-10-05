@@ -2,7 +2,7 @@ export const useImageAnalysis = () => {
   const analyzeImage = async (imageUrl) => {
     const response = await fetch("/api/analyze-image", {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ imageUrl }),
