@@ -1,20 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
-// import Image from "next/image";
+import ImageDisplay from "./imageDisplay";
 
 const LabelList = ({ labels, imageUrl }) => {
   return (
     <div className={`flex flex-col items-center justify-center mx-auto`}>
-      <img
-        src={imageUrl}
-        alt=""
-        className="rounded-lg border-solid border-[6px] border-blue-300 bg-gray-600 my-6"
-        width={500}
-        height={500}
-        // defaultValue={}
-      />
-      <ul className="flex border-solid border-[3px] p-2 border-red-600 w-full">
+      <div className="rounded-xl border-solid border-[6px] overflow-hidden border-blue-300 bg-gray-700 my-6">
+        <ImageDisplay imageUrl={imageUrl} />
+      </div>
+      <ul className="flex flex-wrap border-solid border-[3px] rounded-md border-gray-700 p-2 w-full">
         {labels.map((label, index) => (
-          <li className="mr-2" key={index}>
+          <li
+            className="text-gray-300 mr-2 text-lg font-semibold text-center border-solid "
+            key={index}
+          >
             {label.description}
             {","}
           </li>

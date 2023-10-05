@@ -18,16 +18,19 @@ const ImageUpload = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center">
-      <form onSubmit={handleImageUpload}>
+      <form
+        className="flex items-center justify-between gap-2"
+        onSubmit={handleImageUpload}
+      >
         <input
           type="text"
           placeholder="Enter image URL"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
-          className="border text-black outline-none border-gray-300 p-2 mb-2"
+          className="text-black outline-none  rounded p-2"
         />
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-blue-500 text-white px-4 p-2 rounded"
           type="submit"
         >
           Analyze Image
