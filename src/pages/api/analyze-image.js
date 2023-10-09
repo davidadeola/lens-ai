@@ -14,12 +14,10 @@ const visionClient = new vision.ImageAnnotatorClient({
 const analyzeImage = async (imageUrl) => {
   try {
     // Upload the image to cloudinary
-    const cloudinaryResponse = await cloudinary.v2.uploader.upload(imageUrl);
+    // const cloudinaryResponse = await cloudinary.v2.uploader.upload(imageUrl);
 
     // Analyze the image using Google Vision API
-    const [result] = await visionClient.labelDetection(
-      cloudinaryResponse.secure_url
-    );
+    const [result] = await visionClient.labelDetection(imageUrl);
     const labels = result.labelAnnotations;
     console.log(labels);
     return labels;
