@@ -11,13 +11,17 @@ const ImageUpload = () => {
 
   const handleImageUpload = async (e) => {
     e.preventDefault();
-    try {
-      const labels = await analyzeImage(imageUrl);
-      setLabels(labels);
-    } catch (error) {
-      console.error("Error analyzing image:", error);
+    if (imageUrl) {
+      try {
+        const labelData = await analyzeImage(imageUrl);
+        setLabels(labelData);
+      } catch (error) {
+        console.error("Error analyzing image:", error);
+      }
     }
   };
+
+  console.log(labels);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -41,7 +45,6 @@ const ImageUpload = () => {
         </button>
       </form>
       <ImageDisplay imageUrl={imageUrl} />
-      {/* <LabelList labels={labels} /> */}
     </div>
   );
 };
