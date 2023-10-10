@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useImageAnalysisContext from "@/hooks/context/useImageAnalysisContext";
 import { useImageAnalysis } from "@/hooks/useImageAnalysis";
-import LabelList from "./labelList";
 import ImageDisplay from "./imageDisplay";
 
 const ImageUpload = () => {

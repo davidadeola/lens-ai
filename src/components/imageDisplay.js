@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { ImageIcon } from "./interface/icons/icons";
+import DisplayImage from "./interface/displayImage";
 
 const ImageDisplay = ({ imageUrl }) => {
   console.log(imageUrl);
@@ -9,7 +10,11 @@ const ImageDisplay = ({ imageUrl }) => {
       {!imageUrl ? (
         <ImageIcon className="w-full" />
       ) : (
-        <img src={imageUrl} alt="" width={600} height={600} />
+        <DisplayImage
+          src={imageUrl}
+          className="w-full max-w-[700px]"
+          fallBack="Check Image url"
+        />
       )}
     </div>
   );
